@@ -50,6 +50,11 @@ void	Contact::setSecret(std::string value)
 	this->_secret = value;
 }
 
+void	Contact::setId(int id)
+{
+	this->_id = id;
+}
+
 std::string	Contact::getFirstName() const
 {
 	return (this->_firstName);
@@ -73,4 +78,9 @@ std::string	Contact::getPhoneNumber() const
 std::string	Contact::getSecret() const
 {
 	return (this->_secret);
+}
+
+int Contact::getId() const
+{
+	return (this->_id);
 }

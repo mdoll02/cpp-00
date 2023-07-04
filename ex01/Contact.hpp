@@ -25,14 +25,17 @@ class Contact {
 		void	setNickname(std::string value);
 		void	setPhoneNumber(std::string value);
 		void	setSecret(std::string value);
+		void	setId(int id);
 
 		std::string	getFirstName() const;
 		std::string	getLastName() const;
 		std::string	getNickname() const;
 		std::string	getPhoneNumber() const;
 		std::string	getSecret() const;
+		int 		getId() const;
 
 	private:
+		int 		_id;
 		std::string	_firstName;
 		std::string	_lastName;
 		std::string	_nickname;
