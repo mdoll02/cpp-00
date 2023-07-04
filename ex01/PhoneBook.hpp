@@ -12,3 +12,21 @@
 
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
+
+#include "Contact.hpp"
+#include <string>
+
+class PhoneBook {
+
+	public:
+		PhoneBook();
+		~PhoneBook();
+		int	addContact();
+		void	searchContacts() const;
+
+	private:
+		void	setContact(std::string *contact_info);
+		Contact contacts[8];
+};
+
+#endif
