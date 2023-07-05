@@ -12,7 +12,9 @@
 
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <ostream>
 
 PhoneBook::PhoneBook()
 {
@@ -79,8 +81,63 @@ int	PhoneBook::addContact()
 	return (0);
 }
 
+std::string	PhoneBook::getSizedString(std::string string) const
+{
+	if (string.length() < 10)
+		return (string);
+	string = string.substr(0, 8);
+	string.append(".");
+	return (string);
+}
+
+void	PhoneBook::printColumn(Contact contact) const
+{
+	std::cout << "|" << std::setw(9) <<  contact.getId();
+	std::cout << "|" << std::setw(10);
+	std::cout << getSizedString(contact.getFirstName());
+	std::cout << "|" << std::setw(10);;
+	std::cout << getSizedString(contact.getLastName());
+	std::cout << "|" << std::setw(10);;
+	std::cout << getSizedString(contact.getNickname());
+	std::cout << "|" << std::endl;
+}
+
+void	PhoneBook::showContact(int index) const
+{
+	std::cout << "First name: " << contacts[index].getFirstName() << std::endl;
+	std::cout << "Last name: " << contacts[index].getLastName() << std::endl;
+	std::cout << "Nickname: " << contacts[index].getNickname() << std::endl;
+	std::cout << "Phone number: " << contacts[index].getPhoneNumber() << std::endl;
+	std::cout << "Dark secret 😈: " << contacts[index].getSecret() << std::endl;
+}
+
 void PhoneBook::searchContacts() const
 {
-	
+	int i = 0;
+
+	while (i < 8)
+	{
+		if (this->contacts[i].getFirstName().empty())
+			break;
+		printColumn(contacts[i]);
+		i++;
+	}
+	std::cout << "Please enter an index: ";
+	flush(std::cout);
+	while (420)
+	{
+		int index;
+		std::cin >> index;
+		if (index < i && index >= 0)
+		{
+			showContact(index);
+			break;
+		}
+		else
+		{
+			std::cout << "Please enter a valid index: ";
+			flush(std::cout);
+		}
+	}
 }
 

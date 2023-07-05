@@ -26,6 +26,9 @@ class PhoneBook {
 
 	private:
 		void	setContact(std::string *contact_info);
+		void	printColumn(Contact contact) const;
+		std::string	getSizedString(std::string string) const;
+		void 	showContact(int index) const;
 		Contact contacts[8];
 };
 
