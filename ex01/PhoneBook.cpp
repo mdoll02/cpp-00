@@ -33,9 +33,9 @@ void	PhoneBook::setContact(std::string *contact_info)
 	while (i < 8)
 	{
 		if (contacts[i].getFirstName().empty())
-			i++;
-		else
 			break;
+		else
+			i++;
 	}
 	contacts[i].setFirstName(contact_info[0]);
 	contacts[i].setLastName(contact_info[1]);
