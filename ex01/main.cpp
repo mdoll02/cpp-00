@@ -12,15 +12,27 @@
 
 #include <iostream>
 #include "Contact.hpp"
-// #include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main ()
 {
-	char buff[512];
-	Contact contact;
+	PhoneBook	book;
 
-	std::cout << "Enter Something: ";
-	std::cin >> buff;
-	std::cout << "You entered: " << "[" << buff << "]" << std::endl;
+	while (420)
+	{
+		std::string command;
+
+		std::cout << "Please enter a command:";
+		std::getline (std::cin, command);
+		if (command == "EXIT")
+			break ;
+		else if (command == "ADD")
+			book.addContact();
+		else if (command == "SEARCH")
+			book.searchContacts();
+		else
+			std::cout << "Invalid command" << std::endl;
+	}
+
 	return 0;
 }
