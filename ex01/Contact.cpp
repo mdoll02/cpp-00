@@ -15,14 +15,14 @@
 
 Contact::Contact()
 {
-	std::cout << "Contact constructor called" << std::endl;
-	return ;
+	//std::cout << "Contact constructor called" << std::endl;
+	//return ;
 }
 
 Contact::~Contact()
 {
-	std::cout << "Contact deconstructor called" << std::endl;
-	return ;
+	//std::cout << "Contact deconstructor called" << std::endl;
+	//return ;
 }
 
 void	Contact::setFirstName(std::string value)

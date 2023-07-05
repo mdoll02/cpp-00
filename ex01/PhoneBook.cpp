@@ -16,14 +16,14 @@
 
 PhoneBook::PhoneBook()
 {
-	std::cout << "Contact constructor called" << std::endl;
-	return ;
+	//std::cout << "PhoneBook constructor called" << std::endl;
+	//return ;
 }
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << "PhoneBook deconstructor called" << std::endl;
-	return ;
+	//std::cout << "PhoneBook deconstructor called" << std::endl;
+	//return ;
 }
 
 void	PhoneBook::setContact(std::string *contact_info)
