@@ -42,6 +42,7 @@ void	PhoneBook::setContact(std::string *contact_info)
 	contacts[i].setNickname(contact_info[2]);
 	contacts[i].setPhoneNumber(contact_info[3]);
 	contacts[i].setSecret(contact_info[4]);
+	contacts[i].setId(i);
 }
 
 int	PhoneBook::addContact()
@@ -49,27 +50,27 @@ int	PhoneBook::addContact()
 	std::string	contact_info[5];
 
 	std::cout << "Please enter a first name: ";
-	std::cin >> contact_info[0];
+	std::getline(std::cin, contact_info[0]);
 	if (contact_info[0].empty())
 		return (1);
 
 	std::cout << "Please enter a last name: ";
-	std::cin >> contact_info[1];
+	std::getline(std::cin, contact_info[1]);
 	if (contact_info[1].empty())
 		return (1);
 
 	std::cout << "Please enter a nickname : ";
-	std::cin >> contact_info[2];
+	std::getline(std::cin, contact_info[2]);
 	if (contact_info[2].empty())
 		return (1);
 
 	std::cout << "Please enter a phone number: ";
-	std::cin >> contact_info[3];
+	std::getline(std::cin, contact_info[3]);
 	if (contact_info[3].empty())
 		return (1);
 
 	std::cout << "Please enter dark secret 😈: ";
-	std::cin >> contact_info[4];
+	std::getline(std::cin, contact_info[4]);
 	if (contact_info[4].empty())
 		return (1);
 
