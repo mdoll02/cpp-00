@@ -15,6 +15,7 @@
 #include <iomanip>
 #include <string>
 #include <ostream>
+#include <cstdlib>
 
 PhoneBook::PhoneBook()
 {
@@ -38,6 +39,11 @@ void	PhoneBook::setContact(std::string *contact_info)
 			break;
 		else
 			i++;
+	}
+	if (i == 8)
+	{
+		std::rotate(contacts, contacts + 1, contacts + 8);
+		i = 7;
 	}
 	contacts[i].setFirstName(contact_info[0]);
 	contacts[i].setLastName(contact_info[1]);
@@ -126,8 +132,11 @@ void PhoneBook::searchContacts() const
 	flush(std::cout);
 	while (420)
 	{
-		int index;
-		std::cin >> index;
+		std::string input;
+		std::getline(std::cin, input);
+		if (input.empty())
+			return ;
+		int index = std::atoi(input.c_str());
 		if (index < i && index >= 0)
 		{
 			showContact(index);
