@@ -40,7 +40,14 @@ void	PhoneBook::setContact(std::string *contact_info)
 	}
 	if (i == 8)
 	{
-		std::rotate(contacts, contacts + 1, contacts + 8);
+		Contact temp = contacts[0];
+		int j = 0;
+		while (j < 8)
+		{
+			contacts[j - 1] = contacts[j];
+			j++;
+		}
+		contacts[7] = temp;
 		i = 7;
 	}
 	contacts[i].setFirstName(contact_info[0]);
