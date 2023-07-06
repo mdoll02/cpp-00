@@ -18,7 +18,7 @@ int main ()
 {
 	PhoneBook	book;
 
-	while (420)
+	while (true)
 	{
 		std::string command;
 
