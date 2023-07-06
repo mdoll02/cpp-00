@@ -87,9 +87,9 @@ int	PhoneBook::addContact()
 	return (0);
 }
 
-std::string	PhoneBook::getSizedString(std::string string) const
+std::string	PhoneBook::getSizedString(std::string string) const //TODO get solution without substr
 {
-	if (string.length() < 10)
+	if (string.length() <= 10)
 		return (string);
 	string = string.substr(0, 8);
 	string.append(".");
