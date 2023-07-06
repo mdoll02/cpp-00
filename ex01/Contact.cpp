@@ -16,36 +16,34 @@
 Contact::Contact()
 {
 	//std::cout << "Contact constructor called" << std::endl;
-	//return ;
 }
 
 Contact::~Contact()
 {
 	//std::cout << "Contact deconstructor called" << std::endl;
-	//return ;
 }
 
-void	Contact::setFirstName(std::string value)
+void	Contact::setFirstName(std::string& value)
 {
 	this->_firstName = value;
 }
 
-void	Contact::setLastName(std::string value)
+void	Contact::setLastName(std::string& value)
 {
 	this->_lastName = value;
 }
 
-void	Contact::setNickname(std::string value)
+void	Contact::setNickname(std::string& value)
 {
 	this->_nickname = value;
 }
 
-void	Contact::setPhoneNumber(std::string value)
+void	Contact::setPhoneNumber(std::string& value)
 {
 	this->_phoneNumber = value;
 }
 
-void	Contact::setSecret(std::string value)
+void	Contact::setSecret(std::string& value)
 {
 	this->_secret = value;
 }
