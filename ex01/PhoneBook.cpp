@@ -16,6 +16,7 @@
 #include <string>
 #include <ostream>
 #include <cstdlib>
+#include <cctype>
 
 PhoneBook::PhoneBook()
 {
@@ -126,24 +127,25 @@ void PhoneBook::searchContacts() const
 		i++;
 	}
 	std::cout << "Please enter an index: ";
-	flush(std::cout);
-	while (420)
+	while (true)
 	{
 		std::string input;
 		std::getline(std::cin, input);
 		if (input.empty())
 			return ;
-		int index = std::atoi(input.c_str());
-		if (index < i && index >= 0)
+		if (input.length() == 1 && std::isdigit(input[0]))
 		{
-			showContact(index);
-			break;
+			int index = std::atoi(input.c_str());
+			if (index < i && index >= 0)
+			{
+				showContact(index);
+				break;
+			}
+			else
+				std::cout << "Please enter a valid index: ";
 		}
 		else
-		{
 			std::cout << "Please enter a valid index: ";
-			flush(std::cout);
-		}
 	}
 }
 
