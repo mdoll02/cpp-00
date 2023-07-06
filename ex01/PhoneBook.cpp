@@ -89,7 +89,7 @@ std::string	PhoneBook::getSizedString(std::string string) const //TODO get solut
 {
 	if (string.length() <= 10)
 		return (string);
-	string = string.substr(0, 8);
+	string.resize(9);
 	string.append(".");
 	return (string);
 }
