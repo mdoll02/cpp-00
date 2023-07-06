@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 10:43:17 by mdoll             #+#    #+#             */
-/*   Updated: 2023/07/04 11:03:12 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/07/06 14:29:04 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	PhoneBook::addContact()
 	return (0);
 }
 
-std::string	PhoneBook::getSizedString(std::string string) const //TODO get solution without substr
+std::string	PhoneBook::getSizedString(std::string string) const
 {
 	if (string.length() <= 10)
 		return (string);
