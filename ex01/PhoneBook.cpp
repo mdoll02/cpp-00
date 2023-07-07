@@ -28,7 +28,7 @@ PhoneBook::~PhoneBook()
 	//std::cout << "PhoneBook deconstructor called" << std::endl;
 }
 
-void	PhoneBook::setContact(std::string *contact_info)
+void	PhoneBook::_setContact(std::string *contact_info)
 {
 	int i = 0;
 
@@ -81,11 +81,11 @@ int	PhoneBook::addContact()
 		}
 		i++;
 	}
-	PhoneBook::setContact(contact_info);
+	PhoneBook::_setContact(contact_info);
 	return (0);
 }
 
-std::string	PhoneBook::getSizedString(std::string string) const
+std::string	PhoneBook::_getSizedString(std::string string) const
 {
 	if (string.length() <= 10)
 		return (string);
@@ -94,19 +94,19 @@ std::string	PhoneBook::getSizedString(std::string string) const
 	return (string);
 }
 
-void	PhoneBook::printColumn(Contact contact) const
+void	PhoneBook::_printColumn(Contact contact) const
 {
 	std::cout << "|" << std::setw(9) <<  contact.getId();
 	std::cout << "|" << std::setw(10);
-	std::cout << getSizedString(contact.getFirstName());
+	std::cout << _getSizedString(contact.getFirstName());
 	std::cout << "|" << std::setw(10);;
-	std::cout << getSizedString(contact.getLastName());
+	std::cout << _getSizedString(contact.getLastName());
 	std::cout << "|" << std::setw(10);;
-	std::cout << getSizedString(contact.getNickname());
+	std::cout << _getSizedString(contact.getNickname());
 	std::cout << "|" << std::endl;
 }
 
-void	PhoneBook::showContact(int index) const
+void	PhoneBook::_showContact(int index) const
 {
 	std::cout << "First name: " << contacts[index].getFirstName() << std::endl;
 	std::cout << "Last name: " << contacts[index].getLastName() << std::endl;
@@ -123,7 +123,7 @@ void PhoneBook::searchContacts() const
 	{
 		if (this->contacts[i].getFirstName().empty())
 			break;
-		printColumn(contacts[i]);
+		_printColumn(contacts[i]);
 		i++;
 	}
 	std::cout << "Please enter an index: ";
@@ -138,7 +138,7 @@ void PhoneBook::searchContacts() const
 			int index = std::atoi(input.c_str());
 			if (index < i && index >= 0)
 			{
-				showContact(index);
+				_showContact(index);
 				break;
 			}
 			else

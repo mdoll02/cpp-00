@@ -25,10 +25,10 @@ class PhoneBook {
 		void	searchContacts() const;
 
 	private:
-		void	setContact(std::string *contact_info);
-		void	printColumn(Contact contact) const;
-		std::string	getSizedString(std::string string) const;
-		void 	showContact(int index) const;
+		void	_setContact(std::string *contact_info);
+		void	_printColumn(Contact contact) const;
+		std::string	_getSizedString(std::string string) const;
+		void 	_showContact(int index) const;
 		Contact contacts[8];
 };
 
