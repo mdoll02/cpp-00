@@ -13,7 +13,7 @@
 #include "Contact.hpp"
 #include <iostream>
 
-Contact::Contact()
+Contact::Contact() :_id(0)
 {
 	//std::cout << "Contact constructor called" << std::endl;
 }
