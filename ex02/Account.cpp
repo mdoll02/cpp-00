@@ -13,6 +13,7 @@
 #include "Account.hpp"
 #include <iostream>
 #include <ctime>
+#include <iomanip>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -58,14 +59,15 @@ int	Account::getNbWithdrawals()
 
 void	Account::_displayTimestamp()
 {
-	time_t	t;
-	tm	*tm = localtime(&t);
+	std::time_t	t = std::time(0);
+	std::tm	*tm = std::localtime(&t);
 
-	std::cout << tm->tm_year;
-	std::cout << tm->tm_mon;
-	std::cout << tm->tm_mday;
-	std::cout << tm->tm_hour;
-	std::cout << tm->tm_sec;
+	std::cout << '[' << tm->tm_year + 1900;
+	std::cout << std::setw(2) << std::setfill('0') << tm->tm_mon;
+	std::cout << std::setw(2) << std::setfill('0') << tm->tm_mday << '_';
+	std::cout << std::setw(2) << std::setfill('0') << tm->tm_hour;
+	std::cout << std::setw(2) << std::setfill('0') << tm->tm_min;
+	std::cout << std::setw(2) << std::setfill('0') << tm->tm_sec << ']';
 }
 
 void	Account::displayAccountsInfos()
