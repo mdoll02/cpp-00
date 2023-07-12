@@ -104,10 +104,10 @@ bool	Account::makeWithdrawal(int withdrawal)
 	if (checkAmount() - withdrawal >= 0)
 	{
 		std::cout << " index:" <<  _accountIndex << ";p_amount:" << _amount;
-		this->_amount -= withdrawal;
-		_totalNbWithdrawals += 1;
+		_amount -= withdrawal;
+		_totalNbWithdrawals++;
 		_totalAmount -= withdrawal;
-		_nbWithdrawals += 1;
+		_nbWithdrawals++;
 		std::cout << ";withdrawal:" << withdrawal << ";amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
 		return (true);
 	}
