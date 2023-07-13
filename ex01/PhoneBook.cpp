@@ -42,10 +42,11 @@ void	PhoneBook::_setContact(std::string *contact_info)
 	if (i == 8)
 	{
 		Contact temp = contacts[0];
-		int j = 0;
+		int j = 1;
 		while (j < 8)
 		{
 			contacts[j - 1] = contacts[j];
+			contacts[j - 1].setId(j - 1);
 			j++;
 		}
 		contacts[7] = temp;
@@ -74,6 +75,8 @@ int	PhoneBook::addContact()
 	{
 		std::cout << prompts[i];
 		std::getline(std::cin, contact_info[i]);
+		if (std::cin.eof())
+			exit(0);
 		if (contact_info[0].empty())
 		{
 			std::cout << "Contact info cant be empty!" << std::endl;
@@ -131,6 +134,8 @@ void PhoneBook::searchContacts() const
 	{
 		std::string input;
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			exit(0);
 		if (input.empty())
 			return ;
 		if (input.length() == 1 && std::isdigit(input[0]))

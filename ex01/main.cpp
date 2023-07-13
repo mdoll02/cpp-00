@@ -24,6 +24,8 @@ int main ()
 
 		std::cout << "Please enter a command:";
 		std::getline (std::cin, command);
+		if (std::cin.eof())
+			exit(0);
 		if (command == "EXIT")
 			break ;
 		else if (command == "ADD")
