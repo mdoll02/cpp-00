@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdoll <mdoll@student.42wolfsburg.de>       +#+  +:+       +#+        */
+/*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 08:28:38 by mdoll             #+#    #+#             */
-/*   Updated: 2023/07/04 09:36:57 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/09/06 09:39:47 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 				std::cout << (char) toupper(argv[i][j++]);
 			i++;
 		}
+	//test_pull
 	std::cout << std::endl;
 	return 0;
 }
